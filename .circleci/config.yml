@@ -20,7 +20,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: "./go"
-      - run: ls ./go | wc -l
+      - run: ls ./go/loadsoffiles | wc -l
 
 workflows:
   version: 2
