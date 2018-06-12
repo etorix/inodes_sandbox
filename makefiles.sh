@@ -1,4 +1,4 @@
 for i in {1..20000}
 do
-   mkfile 15k ./files/loadsoffiles/bigfile$i
+   dd if=/dev/random of=bigfile$i bs=15000 count=1
 done
