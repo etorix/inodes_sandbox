@@ -2,7 +2,7 @@ filedir=./files/loadsoffiles
 
 if [ ! -d $filedir ]
 then
-   sudo mkdir $filedir
+   sudo mkdir -p $filedir
 fi
 
 for i in {1..20000}
