@@ -1,5 +1,4 @@
-for i in {1..40000}
+for i in {1..20000}
 do
-   touch ./files/loadsoffiles/file$i
-   echo "test" >> ./files/loadsoffiles/file$i
+   mkfile 15k ./files/loadsoffiles/bigfile$i
 done
