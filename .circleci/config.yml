@@ -5,21 +5,23 @@ jobs:
       - image: circleci/golang:1.10
     environment:
       GOPATH: ./go
-    - checkout
-    - persist_to_workspace
-        root: "files"
-        paths: "loadsoffiles"
+    steps:
+      - checkout
+      - persist_to_workspace
+          root: "files"
+          paths: "loadsoffiles"
   test:
     docker:
       - image: circleci/golang:1.10
     environment:
       GOPATH: ./go
-    - checkout
-    - persist_to_workspace
-        root: "files"
-        paths: "loadsoffiles"
-    - attach_workspace:
-        at: "./go"
+    steps:
+      - checkout
+      - persist_to_workspace
+          root: "files"
+          paths: "loadsoffiles"
+      - attach_workspace:
+          at: "./go"
 
 workflows:
   version: 2
@@ -29,5 +31,4 @@ workflows:
       - test:
           requires:
             - build
-
 
