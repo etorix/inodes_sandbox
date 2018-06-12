@@ -10,6 +10,7 @@ jobs:
       - persist_to_workspace:
           root: "files"
           paths: "loadsoffiles"
+      - run: ls ./files/loadsoffiles | wc -l
   test:
     docker:
       - image: circleci/golang:1.10
@@ -19,6 +20,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: "./go"
+      - run: ls ./go | wc -l
 
 workflows:
   version: 2
