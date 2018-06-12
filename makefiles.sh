@@ -1,4 +1,5 @@
-for i in {1..20000}
+for i in {1..40000}
 do
-   touch ./files/file$i
+   touch ./files/loadsoffiles/file$i
+   echo "test" >> ./files/loadsoffiles/file$i
 done
