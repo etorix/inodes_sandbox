@@ -7,7 +7,7 @@ jobs:
       GOPATH: ./go
     steps:
       - checkout
-      - persist_to_workspace
+      - persist_to_workspace:
           root: "files"
           paths: "loadsoffiles"
   test:
@@ -17,9 +17,6 @@ jobs:
       GOPATH: ./go
     steps:
       - checkout
-      - persist_to_workspace
-          root: "files"
-          paths: "loadsoffiles"
       - attach_workspace:
           at: "./go"
 
