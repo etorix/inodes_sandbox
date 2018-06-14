@@ -18,6 +18,7 @@ jobs:
       GOPATH: ./go
     steps:
       - checkout
+      - run: sudo apt-get install tar
       - attach_workspace:
           at: "./go"
       - run: ls ./go/loadsoffiles | wc -l
