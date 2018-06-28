@@ -29,6 +29,9 @@ workflows:
     jobs:
       - build
       - test:
+          filters:
+            branches:
+              ignore: /.*/
           requires:
             - build
 
