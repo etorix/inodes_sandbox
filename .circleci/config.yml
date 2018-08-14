@@ -17,7 +17,8 @@ jobs:
       GOPATH: ./go
     steps:
       - run: sudo apt-get install tar
-      - run: sudo apt-get install postgresql postgresql-contrib
+      - run: |
+             sudo apt-get install postgresql postgresql-contrib
       - run: ls ./go/loadsoffiles | wc -l
 
 workflows:
