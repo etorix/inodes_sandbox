@@ -2,7 +2,7 @@ version: 2
 jobs: 
   build:
     docker:
-      - image: circleci/android:api-27-alpha@sha256:733349783d3147bb78b214ceea2cede239dccfacef7cf34ab2091fe477b50f1b
+      - image: circleci/ruby:2.2-node
     environment:
       GOPATH: ./go
     steps:
@@ -19,6 +19,7 @@ jobs:
     steps:
       - checkout
       - run: sudo apt-get install tar
+      - run: sudo apt-get install postgresql postgresql-contrib
       - attach_workspace:
           at: "./go"
       - run: ls ./go/loadsoffiles | wc -l
