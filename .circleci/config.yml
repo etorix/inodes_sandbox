@@ -2,9 +2,11 @@ version: 2
 jobs: 
   build:
     docker:
-      - image: circleci/ruby:2.3.7-node
+      - image: circleci/php:7.2.3-fpm-node-browsers
       - image: circleci/postgres:9.6.6-alpine
         environment:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: circleci-test_test
           POSTGRES_PORT: 5433
     steps:
       - run:
