@@ -2,7 +2,7 @@ version: 2
 jobs: 
   build:
     docker:
-      - image: circleci/7.2.3-fpm-stretch-node-browsers 
+      - image: buildpack-deps:trusty 
       - image: circleci/postgres:9.6.6-alpine
         environment:
           POSTGRES_USER: postgres
