@@ -26,7 +26,12 @@ jobs:
           name: test      
           command: |
                    docker
+      - run:
+          name: test
+          command: |
                    docker-compose
+
+
 workflows:
   version: 2
   all:
